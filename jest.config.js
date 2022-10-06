@@ -4,5 +4,6 @@ module.exports = {
   testEnvironment: 'node',
   moduleNameMapper: {
     '@core/(.*)': './core'
-  }
+  },
+  modulePathIgnorePatterns: ["dist"]
 };

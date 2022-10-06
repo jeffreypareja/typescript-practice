@@ -5,12 +5,18 @@
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
 		"outDir": "./dist",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@core/*":[
         "./core/*"
       ]
     }
 	},
-  "exclude": ["node_modules", "dist", "ds"]
+  "exclude": ["node_modules", "dist", "ds", "test"], 
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
+  "plugins": [{
+    "transform": "typescript-transform-paths",
+  }]
 }
