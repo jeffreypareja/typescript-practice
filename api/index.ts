@@ -24,5 +24,7 @@ app.get('/decrement', function(req: Request, res: Response) {
 })
 
 export default function(){
-	app.listen(port)
+	app.listen(port, function(){
+		console.log('app running ')
+	})
 }
