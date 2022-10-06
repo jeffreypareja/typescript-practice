@@ -23,8 +23,11 @@ app.get('/decrement', function(req: Request, res: Response) {
 	res.send(newValue)
 })
 
-export default function(){
+export default app
+
+
+export function startServer(){
 	app.listen(port, function(){
-		console.log('app running ')
+		console.log('App has now started')
 	})
 }
