@@ -1,7 +1,16 @@
 {
+  "paths": {
+    "core/*":["./core"]
+  },
   "extends": "@tsconfig/node16/tsconfig.json",
   "compilerOptions": {
-		"outDir": "./dist"
+		"outDir": "./dist",
+    "baseUrl": "./",
+    "paths": {
+      "@core/*":[
+        "./core/*"
+      ]
+    }
 	},
   "exclude": ["node_modules", "dist", "ds"]
 }
