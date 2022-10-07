@@ -3,16 +3,14 @@
   "compilerOptions": {
         "allowUmdGlobalAccess": true,
         "baseUrl": "./",
-        /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
         "paths": {
-            "api": [
-                "api"
+            "api/*": [
+                "api/*"
             ],
             "core": [
               "core"
             ]
         },
-        /* Advanced Options */
         "plugins": [
             {
                 "transform": "typescript-transform-paths"

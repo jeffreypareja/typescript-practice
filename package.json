@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint . --fix",
-    "test": "jest",
+    "test": "jest --no-cache",
     "build": "npx ttsc --p ./tsconfig.json",
     "start": "node dist/index.js",
     "dev": "npx nodemon"

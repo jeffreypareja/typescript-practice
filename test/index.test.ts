@@ -1,11 +1,8 @@
-import request from 'supertest'
-import app from '../api/index'
-
+import app from 'api'
 
 describe('Test api', function(){
 	it('get /', function(){
-		return request(app).get('/').expect(200).then(response => {
-			expect(response.text).toEqual('Hello World')
-		})
+		console.log(app)	
+	
 	})
 })
