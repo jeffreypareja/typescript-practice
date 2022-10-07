@@ -1,8 +1,8 @@
-export default class UseCaseResponse{
+export default class UseCaseResponse<ResponseType>{
 	public status:string; 
-	public data: object;
+	public data: ResponseType;
 	
-	constructor(response: object){
+	constructor(response: ResponseType){
 		this.status = 'SUCCESS'	
 		this.data = response
 	}	
