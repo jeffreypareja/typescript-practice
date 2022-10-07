@@ -8,7 +8,7 @@
     "test": "jest",
     "build": "npx ttsc --p ./tsconfig.json",
     "start": "node dist/index.js",
-    "dev": "npx ts-node-dev --prefer-ts true --no-notify index.ts -r tsconfig-paths/register --watch src --transpileOnly"
+    "dev": "npx nodemon"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +28,6 @@
     "supertest": "^6.3.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.8.2",
-    "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
     "ttypescript": "^1.5.13",
     "typescript": "^4.8.4",

@@ -1,4 +1,3 @@
-import {startServer}  from './api'
 import app from 'api'
 
-startServer()
+console.log(app)
