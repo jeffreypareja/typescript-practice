@@ -3,7 +3,8 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
   moduleNameMapper: {
-    '^api/(.*)$': '<rootDir>/api/$1'
+    '^api/(.*)$': '<rootDir>/api/$1', 
+    '^io/(.*)$': '<rootDir>/io/$1',
   },
   modulePathIgnorePatterns: ['dist'],
   moduleDirectories:["node_modules", "<rootDir>"],
