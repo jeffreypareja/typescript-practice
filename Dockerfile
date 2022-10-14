@@ -1,12 +1,19 @@
-FROM node:12-alpine as base
-#RUN apk add --no-cache python2 g++ make
-WORKDIR ./
+FROM node:12-alpine as ts-compiler
+WORKDIR /usr/src/app
+COPY package.json ./
+COPY tsconfig.json ./
+RUN npm install
+COPY . ./
+RUN npm run build 
 
-COPY package*.json  ./
+FROM node:12-alpine as ts-remover
+WORKDIR /usr/app
+COPY --from=ts-compiler /usr/src/app/package*.json ./
+COPY --from=ts-compiler /usr/src/app/dist ./
+RUN npm ci --omit=dev
 
-RUN npm install --omit=dev
-RUN npm run build
-COPY . .
 
-CMD ["node", "dist/index.js"]
-EXPOSE 3000
+FROM gcr.io/distroless/nodejs:12
+WORKDIR /usr/app
+COPY --from=ts-remover /usr/app ./
+CMD ["index.js"]
